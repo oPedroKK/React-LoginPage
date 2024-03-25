@@ -33,7 +33,7 @@ function Register() {
             return;
         }
 
-        if(!email.includes('@gmail.com' || '@hotmail.com')){
+        if(!email.includes('@gmail.com') && !email.includes('@hotmail.com')){
             identify('Insira um email valido.')
             getColor('red')
             return;
