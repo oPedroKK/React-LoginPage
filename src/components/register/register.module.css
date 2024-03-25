@@ -1,0 +1,98 @@
+.register {
+    margin-block: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 30rem;
+    height: 38rem;
+
+    padding: 15px;
+    border-radius: 25px;
+
+    box-shadow: 5px 20px 20px 20px #d8d8d8;
+    
+    font-size: 20px;
+
+    transition: 1s;
+}
+
+.registerInfos {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: 1s;
+}
+
+.registerInfos button {
+    margin-top: 10px;
+    background-color: #4f80e9;
+    border: none;
+    border-radius: 25px;
+
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.registerInfos input {
+    border: none;
+    border-radius: 20px;
+    outline: none;
+
+    background-color: #e6e6e6;
+    padding: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #355b94;
+    transition: 1s;
+}
+
+button, input {
+    width: 400px;
+    height: 45px;
+
+    transition: 1s;
+}
+
+p {
+    margin-top: 20px;
+}
+
+h1 {
+    margin-block: 20px;
+}
+
+
+@media (max-width: 600px){
+    .register {
+        margin-inline: 25px;
+        font-size: 15px;
+
+        width: 28rem;
+        height: 35rem;
+    }
+
+    button, input {
+        width: 250px;
+    }
+}
+
+@media (max-width: 400px){
+    .register {
+        margin-inline: 20px;
+        font-size: 15px;
+
+        width: 23rem;
+        height: 32rem;
+    }
+
+    button, input {
+        width: 200px;
+    }
+}
