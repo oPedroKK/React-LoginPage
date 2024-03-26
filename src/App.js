@@ -1,16 +1,9 @@
-import Container from "./components/container";
-import Login from "./components/login";
-import Header from "./components/header";
-import Register from "./components/register";
+import RoutesApp from "./routes";
 
 function App() {
   return (
     <div>
-      <Header />
-      <Container>
-        <Register />
-        <Login />
-      </Container>
+      <RoutesApp />
     </div>
   );
 }
