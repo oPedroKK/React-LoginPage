@@ -1,5 +1,6 @@
 import styles from "./register.module.css"
 import loggedAccounts from "../../json/loggedAcc.json"
+import validEmails from "../../json/validEmails.json"
 import { useState } from "react"
 
 function Register() {
@@ -7,11 +8,22 @@ function Register() {
     const [repeatedPass, getRepPass] = useState()
     const [message, identify] = useState('')
     const [color, getColor] = useState('')
+    const [validEmail, setValidEmail] = useState(false);
 
     const registerFunction = () => {
         const username = document.getElementById('username').value
         const email = document.getElementById('email').value
         const pass = document.getElementById('pass').value
+
+        const verifyEmail = () => {
+            for (const emailCheck of validEmails) {
+                if (email.includes(emailCheck)) {
+                    setValidEmail(true);
+                    return;
+                }
+            }
+            setValidEmail(false);
+        }
         
         for(const verifyRep of loggedAccounts){
             if(verifyRep.username === username){
@@ -33,7 +45,9 @@ function Register() {
             return;
         }
 
-        if(!email.includes('@gmail.com') && !email.includes('@hotmail.com')){
+        verifyEmail();
+
+        if(validEmail){
             identify('Insira um email valido.')
             getColor('red')
             return;
@@ -75,13 +89,13 @@ function Register() {
                 <p>Nome de usuário</p>
                 <input 
                 type="text" 
-                placeholder="Ex: Barboza Fontes"
+                placeholder="Ex: John Doe"
                 id="username"/>
 
                 <p>Email</p>
                 <input 
                 type="text" 
-                placeholder="Ex: PBarboza@hotmail.com"
+                placeholder="Ex: Jonh442@hotmail.com"
                 id="email"/>
 
                 <p>Senha</p>
